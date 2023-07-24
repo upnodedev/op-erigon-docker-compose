@@ -1,0 +1,33 @@
+version: '3'
+
+networks:
+  op-erigon:
+
+services:
+  erigon:
+    image: testinprod/op-erigon:${TAG:-2.48.1-0.1.8-amd64}
+    entrypoint: /home/erigon/entryscript/erigon.sh
+    networks:
+      - op-erigon
+    ports: 
+      - "8545:8545"
+    expose:
+      - 8551
+    volumes:
+      - ./entryscript:/home/erigon/entryscript
+      - ./datadir:/home/erigon/.local/share/erigon
+      - ./jwtsecret:/home/erigon/jwtsecret
+    restart: unless-stopped
+    mem_swappiness: 0
+    labels:
+      - "traefik_template=name:docker-optimism-archive port:8545 prefix:/"
+
+  op-node:
+    image: us-docker.pkg.dev/oplabs-tools-artifacts/images/op-node:latest
+    entrypoint: /home/erigon/entryscript/op-node.sh
+    networks:
+      - op-erigon
+    volumes:
+      - ./entryscript:/home/erigon/entryscript
+      - ./jwtsecret:/home/erigon/jwtsecret
+    restart: unless-stopped
