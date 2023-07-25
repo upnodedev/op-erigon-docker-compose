@@ -6,6 +6,8 @@ This tool automatically download and extract backup snapshot before launching op
 
 ## How to launch
 
+Copy .env.example to .env
+
 Update ROLLUP_HISTORICALRPC and L1_RPC_ENDPOINT in .env
 
 Then just run
