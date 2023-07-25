@@ -8,7 +8,9 @@ This tool automatically download and extract backup snapshot before launching op
 
 Copy .env.example to .env
 
-Update ROLLUP_HISTORICALRPC and L1_RPC_ENDPOINT in .env
+Update L1_RPC_ENDPOINT (Required) and ROLLUP_HISTORICALRPC (Optional) in .env
+
+For L1_RPC_ENDPOINT, you can use any external archive node providers such as Alchemy and Infura or host your own dedicated one with [Upnode Deploy](https://deploy.upnode.org)
 
 Then just run
 
