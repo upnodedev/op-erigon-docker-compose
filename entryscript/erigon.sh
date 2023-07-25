@@ -3,6 +3,9 @@
 if [ ! -e "/home/erigon/.local/share/erigon/SNAPSHOT_DOWNLOADED" ]; then
   rm -rf /home/erigon/.local/share/erigon/chaindata
   while ! wget -c https://op-erigon-backup.mainnet.testinprod.io -O /home/erigon/op-erigon-backup.tar.gz
+  do
+    sleep 3
+  done
   tar -xzf /home/erigon/op-erigon-backup.tar.gz -C /home/erigon/.local/share/erigon
   mv /home/erigon/.local/share/erigon/database/chaindata /home/erigon/.local/share/erigon/chaindata
   rm /home/erigon/op-erigon-backup.tar.gz
