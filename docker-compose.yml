@@ -10,7 +10,7 @@ services:
     networks:
       - op-erigon
     ports: 
-      - "8545:8545"
+      - "8546:8545"
     expose:
       - 8551
     volumes:
