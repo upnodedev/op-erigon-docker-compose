@@ -1,3 +1,4 @@
 datadir
 jwtsecret
+monitoring
 .env
