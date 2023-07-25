@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if [ ! -e "/home/erigon/SNAPSHOT_DOWNLOADED" ]; then
+if [ ! -e "/home/erigon/.local/share/erigon/SNAPSHOT_DOWNLOADED" ]; then
   rm -rf /home/erigon/.local/share/erigon/chaindata
   wget -c https://op-erigon-backup.mainnet.testinprod.io -O - | tar -xz -C /home/erigon/.local/share/erigon
-  touch /home/erigon/SNAPSHOT_DOWNLOADED
+  touch /home/erigon/.local/share/erigon/SNAPSHOT_DOWNLOADED
 fi
 
 erigon \
