@@ -3,7 +3,7 @@
 if [ ! -e "/home/erigon/.local/share/erigon/SNAPSHOT_DOWNLOADED" ]; then
   rm -rf /home/erigon/.local/share/erigon/chaindata
   wget -c https://op-erigon-backup.mainnet.testinprod.io -O - | tar -xz -C /home/erigon/.local/share/erigon
-  mv /home/erigon/.local/share/erigon/database/* /home/erigon/.local/share/erigon/*
+  mv /home/erigon/.local/share/erigon/database/chaindata /home/erigon/.local/share/erigon/chaindata
   touch /home/erigon/.local/share/erigon/SNAPSHOT_DOWNLOADED
 fi
 
