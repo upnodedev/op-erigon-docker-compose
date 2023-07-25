@@ -6,6 +6,8 @@ networks:
 services:
   erigon:
     image: testinprod/op-erigon:${TAG:-2.48.1-0.1.8-amd64}
+    env_file:
+      - .env
     entrypoint: /home/erigon/entryscript/erigon.sh
     networks:
       - op-erigon
@@ -24,6 +26,8 @@ services:
 
   op-node:
     image: us-docker.pkg.dev/oplabs-tools-artifacts/images/op-node:latest
+    env_file:
+      - .env
     entrypoint: /home/erigon/entryscript/op-node.sh
     networks:
       - op-erigon
