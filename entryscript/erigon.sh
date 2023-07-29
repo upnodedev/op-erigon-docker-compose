@@ -23,8 +23,8 @@ erigon \
   --authrpc.port=8551 \
   --authrpc.vhosts="*" \
   --authrpc.jwtsecret="/home/erigon/jwtsecret/jwt.hex" \
-  --rollup.sequencerhttp="https://mainnet-sequencer.optimism.io" \
+  --rollup.sequencerhttp="https://$NETWORK-sequencer.optimism.io" \
   --rollup.historicalrpc=$ROLLUP_HISTORICALRPC \
   --rollup.disabletxpoolgossip=true \
-  --chain=optimism-mainnet \
+  --chain=optimism-$NETWORK \
   --nodiscover
