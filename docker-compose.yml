@@ -5,7 +5,7 @@ networks:
 
 services:
   erigon:
-    image: testinprod/op-erigon:${TAG:-2.48.1-0.1.9-amd64}
+    image: testinprod/op-erigon:${TAG:-latest}
     env_file:
       - .env
     entrypoint: /home/erigon/entryscript/erigon.sh
