@@ -2,6 +2,12 @@ version: '3'
 
 networks:
   op-erigon:
+  traefik_proxy:
+    external: true
+    name: traefik_proxy
+
+volumes:
+  op-erigon-data:
 
 services:
   erigon:
@@ -10,6 +16,7 @@ services:
       - .env
     entrypoint: /home/erigon/entryscript/erigon.sh
     networks:
+      - traefik_proxy
       - op-erigon
     ports: 
       - "${RPC_PORT:-8545}:8545"
@@ -17,7 +24,7 @@ services:
       - 8551
     volumes:
       - ./entryscript:/home/erigon/entryscript
-      - ./datadir:/home/erigon/.local/share/erigon
+      - op-erigon-data:/home/erigon/.local/share/erigon
       - ./jwtsecret:/home/erigon/jwtsecret
     restart: unless-stopped
     mem_swappiness: 0

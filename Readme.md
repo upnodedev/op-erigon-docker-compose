@@ -15,6 +15,7 @@ For L1_RPC_ENDPOINT, you can use any external archive node providers such as Alc
 Then just run
 
 ```
+docker network create traefik_proxy
 bash generate-jwt.sh
 docker compose up -d
 ```
