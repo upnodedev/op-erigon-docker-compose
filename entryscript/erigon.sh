@@ -2,7 +2,7 @@
 
 if [ ! -e "/home/erigon/.local/share/erigon/SNAPSHOT_DOWNLOADED" ]; then
   rm -rf /home/erigon/.local/share/erigon/chaindata
-  while ! wget -c https://op-erigon-backup.mainnet.testinprod.io -O /home/erigon/op-erigon-backup.tar.gz
+  while ! wget -c https://op-erigon-backup.$NETWORK.testinprod.io -O /home/erigon/op-erigon-backup.tar.gz
   do
     sleep 3
   done
