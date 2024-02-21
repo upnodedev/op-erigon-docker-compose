@@ -19,6 +19,6 @@ op-node \
   --l1.beacon=$L1_BEACON_ENDPOINT \
   --l2="http://erigon:8551" \
   --l2.jwt-secret="/home/erigon/jwtsecret/jwt.hex" \
-  --network=$NETWORK \
+  --network=op-$NETWORK \
   --rpc.addr=0.0.0.0 \
   --rpc.port=9545
