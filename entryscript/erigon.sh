@@ -27,4 +27,5 @@ erigon \
   --rollup.historicalrpc=$ROLLUP_HISTORICALRPC \
   --rollup.disabletxpoolgossip=true \
   --chain=optimism-$NETWORK \
+  --db.size.limit=8TB \
   --nodiscover
