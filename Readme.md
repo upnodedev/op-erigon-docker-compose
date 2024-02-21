@@ -8,9 +8,11 @@ This tool automatically download and extract backup snapshot before launching op
 
 Copy .env.example to .env
 
-Update L1_RPC_ENDPOINT (Required) and ROLLUP_HISTORICALRPC (Optional) in .env
+Update `L1_RPC_ENDPOINT` (Required), `L1_BEACON_ENDPOINT` (Required) and `ROLLUP_HISTORICALRPC` (Optional) in .env
 
-For L1_RPC_ENDPOINT, you should use Alchemy ethereum endpoint (Free plan is sufficient)
+For `L1_RPC_ENDPOINT`, you can use Alchemy ethereum endpoint (Free plan is sufficient)
+
+For `L1_BEACON_ENDPOINT`, you can use QuickNode if you don't want to host one
 
 Then just run
 
